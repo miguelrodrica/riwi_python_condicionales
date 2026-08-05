@@ -1,87 +1,100 @@
-# M1 Python - Actividad 2
+# Actividad de Condicionales y Ciclos en Python
 
-Este repositorio contiene la **solución de 10 ejercicios de lógica en Python** enfocados en:
+Este repositorio contiene la **solución a 10 retos progresivos** desarrollados como parte del curso *Desarrollo de Software Web & Analítica de Datos* de **Riwi**, en el **Módulo 1: Fundamentos de Programación con Python**.
 
-- Condicionales (`if`, `elif`, `else`)
-- Ciclos (`while`)
-- Validación básica de entradas
-- Cálculo de precios, descuentos, recargos e impuestos
-- Reglas de negocio simples en distintos contextos
+---
 
-## Objetivo general
+## Descripción general
+El objetivo principal de la actividad es afianzar las habilidades en la construcción de programas con Python, enfocados en la toma de decisiones mediante condicionales (`if`, `elif`, `else`), validación de entradas, uso de ciclos (`while`) y aplicación de reglas de negocio sencillas en contextos realistas.
 
-Practicar la construcción de programas que tomen decisiones según condiciones específicas y apliquen fórmulas de cálculo en escenarios cotidianos (ventas, entradas, evaluaciones, acceso, etc.).
+Cada reto modela un escenario diferente, desde ventas con descuentos y control de acceso hasta operaciones de restaurante, evaluaciones o gimnasios. Se espera que el estudiante analice el caso y construya el flujo más lógico y robusto posible.
+
+---
 
 ## Estructura del repositorio
 
-El repositorio está organizado en un archivo por ejercicio:
+```
+solución/
+│ 1_panadería.py
+│ 2_taquilla.py
+│ 3_entrenamiento.py
+│ 4_heladería.py
+│ 5_librería.py
+│ 6_parqueadero.py
+│ 7_restaurante.py
+│ 8_docente.py
+│ 9_tienda.py
+│ 10_acceso.py
+userstory.md
+README.md
+```
 
-1. `m1_python_actividad_2_ejercicio1.py`
-2. `m1_python_actividad_2_ejercicio2.py`
-3. `m1_python_actividad_2_ejercicio3.py`
-4. `m1_python_actividad_2_ejercicio4.py`
-5. `m1_python_actividad_2_ejercicio5.py`
-6. `m1_python_actividad_2_ejercicio6.py`
-7. `m1_python_actividad_2_ejercicio7.py`
-8. `m1_python_actividad_2_ejercicio8.py`
-9. `m1_python_actividad_2_ejercicio9.py`
-10. `m1_python_actividad_2_ejercicio10.py`
+---
 
-## Resumen de ejercicios
+## Ejercicios incluidos
 
-### Ejercicio 1 — Panadería con descuentos por volumen
-Calcula el valor total de compra de panes (precio unitario fijo), aplicando descuentos según cantidad:
-- Sin descuento hasta cierto rango
-- 10% para compras intermedias
-- 20% para compras mayores  
-Incluye validación de cantidad y opción de repetir compra.
+### 1. Panadería: descuentos por volumen
+- Calcula costo según cantidad, con descuentos escalonados y validaciones.
 
-### Ejercicio 2 — Precio de entrada por edad
-Determina el costo de una entrada según la edad del cliente:
-- Menores de 5: gratis
-- Niños: tarifa reducida
-- Adultos: tarifa estándar
-- Adultos mayores: tarifa preferencial  
-Permite registrar múltiples clientes en ciclo.
+### 2. Taquilla: precio según edad
+- Determina cobro de entrada por edad, manejo de rangos y control de registro.
 
-### Ejercicio 3 — Seguimiento de entrenamiento semanal
-Solicita cuántos días entrenó una persona en la semana y muestra mensaje motivacional según el resultado.  
-Si cumple disciplina alta, acumula puntos de energía.
+### 3. Entrenamiento: disciplina semanal
+- Valora días de ejercicio, entrega retroalimentación y suma puntos de energía.
 
-### Ejercicio 4 — Heladería: sabor + topping
-Permite elegir sabor de helado (chocolate o vainilla) y decidir si agrega topping.  
-Calcula precio final según combinación elegida y valida sabores disponibles.
+### 4. Heladería: sabor y topping
+- Permite escoger entre varios sabores y si se agrega topping, validando todo ingreso.
 
-### Ejercicio 5 — Librería con descuento estudiantil y cupón
-Calcula pago de un libro con:
-- Descuento para estudiantes
-- Posible descuento adicional mediante cupón válido  
-Si no aplica condiciones, cobra precio completo.
+### 5. Librería: descuentos y cupones
+- Aplica descuentos para estudiantes y/o por cupón (requiere código válido).
 
-### Ejercicio 6 — Parqueadero con multa por exceso de horas
-Calcula cobro por uso de parqueadero con tarifa por hora.  
-Si supera el límite de horas definido, añade una multa fija.
+### 6. Parqueadero: cobro y multa
+- Cobro estándar por hora y multa al exceder límite, calculando el monto exacto.
 
-### Ejercicio 7 — Almuerzos con bebida e impuesto
-Calcula valor a pagar por almuerzos, con opción de agregar bebidas.  
-Al subtotal resultante se le aplica un recargo/impuesto porcentual.
+### 7. Restaurante: menú, bebidas e impuesto
+- Suma precios según cantidades y aplica recargo/impuesto final.
 
-### Ejercicio 8 — Nota final ponderada
-Calcula nota final a partir de:
-- Prueba técnica (70%)
-- Prueba lógica (30%)  
-Clasifica resultado en aprobado, revisión o reprobado.
+### 8. Evaluación: nota ponderada
+- Calcula promedio ponderado de dos pruebas y clasifica el resultado acorde.
 
-### Ejercicio 9 — Compra por cantidad + costo de envío
-Calcula valor de compra de productos con descuento escalonado por volumen.  
-Luego evalúa si corresponde sumar costo fijo de envío cuando no se alcanza un monto mínimo.
+### 9. Tienda: descuentos y envío mínimo
+- Aplica descuentos por volumen y costo de envío si no se alcanza un umbral.
 
-### Ejercicio 10 — Control de acceso por edad y documento
-Evalúa si una persona puede ingresar según:
-- Ser mayor de edad
-- Presentar documento de identidad  
-Muestra mensajes para acceso concedido o denegado según el caso.
+### 10. Acceso: control por edad y documento
+- Permite o rechaza acceso según edad y presencia de documento.
 
-## Nota
+---
 
-Este README fue reconstruido a partir de las soluciones de código disponibles, para documentar nuevamente el planteamiento funcional de cada ejercicio.
+## ¿Cómo ejecutar los ejercicios?
+
+Requisitos previos:
+- Tener Python 3 instalado.
+
+Pasos sugeridos:
+
+1. Clona este repositorio:
+   ```bash
+   git clone https://github.com/miguelrodrica/riwi_python_condicionales.git
+   cd riwi_python_condicionales
+   ```
+2. Ve a la carpeta de soluciones:
+   ```bash
+   cd solución
+   ```
+3. Ejecuta el archivo del reto que quieras probar, por ejemplo:
+   ```bash
+   python 1_panadería.py
+   # O bien: python3 1_panadería.py
+   ```
+---
+
+## Notas y recomendaciones
+- El archivo `userstory.md` incluye la descripción detallada de cada reto y sus reglas de negocio.
+- Los scripts están preparados para pruebas manuales y uso en terminal.
+- Utiliza siempre validaciones y sigue el flujo propuesto para practicar buenas prácticas.
+- Este proyecto es de uso académico y libre adaptación, respaldando buenas bases en programación estructurada.
+
+---
+
+### Autoría y licencia
+Desarrollado para la formación práctica en el marco del curso Riwi. Uso, copia y adaptación permitidos con fines educativos y de aprendizaje.

@@ -1,144 +1,145 @@
-# User Stories - Actividad 2 (Reconstruidas desde las soluciones)
+# User Stories – Actividad de Condicionales y Ciclos en Python
 
-A continuación se presentan historias de usuario y criterios de aceptación deducidos a partir del comportamiento implementado en cada ejercicio.
-
----
-
-## Ejercicio 1 — Panadería con descuentos
-
-**Historia de usuario**  
-Como cajero de una panadería, quiero calcular automáticamente el total de una compra de panes según la cantidad, para aplicar descuentos por volumen y mostrar el ahorro al cliente.
-
-**Criterios de aceptación**
-- Dado un precio unitario de pan, cuando la cantidad es válida y está en rango bajo, se cobra sin descuento.
-- Cuando la cantidad supera el primer umbral, se aplica 10% de descuento.
-- Cuando la cantidad supera el segundo umbral, se aplica 20% de descuento.
-- Si la cantidad es menor o igual a 0, se informa que es inválida.
-- El sistema pregunta si se desea registrar otra compra.
+## Objetivo general
+Diseñar y resolver problemas cotidianos mediante scripts en Python que utilicen condicionales (`if`, `elif`, `else`), bucles (`while`) y validaciones, simulando situaciones reales de venta, control y toma de decisiones. Cada ejercicio representa un caso independiente en el que se espera del estudiante:
+- Interpretar y plantear un flujo lógico de solución.
+- Desarrollar validaciones y manejar entradas de usuario.
+- Calcular resultados aplicando reglas de negocio concretas.
+- Presentar salidas claras y responder adecuadamente a errores o entradas inválidas.
 
 ---
 
-## Ejercicio 2 — Entrada por edades
+## User Stories por ejercicio
 
+### Ejercicio 1 — Panadería: cálculo y descuentos por volumen
 **Historia de usuario**  
-Como encargado de boletería, quiero asignar el precio de entrada según la edad del cliente, para cobrar la tarifa correcta por categoría.
+Como cajero de una panadería, quiero calcular el total de una compra de panes y aplicar descuentos según la cantidad comprada, para ofrecer automáticamente el mejor precio al cliente y mostrarle su ahorro.
 
 **Criterios de aceptación**
+- El sistema solicita la cantidad de panes y repite el ciclo mientras el usuario lo desee.
+- Si la cantidad es mayor a cero y hasta 20 panes, se cobra precio normal.
+- De 21 a 49 panes, se aplica un 10% de descuento sobre el total.
+- Para 50 o más panes, se aplica un 20% de descuento.
+- Si la cantidad ingresada es menor o igual a cero, muestra mensaje de error y vuelve a solicitar el dato.
+- Muestra claramente el precio total y el ahorro si corresponde.
+
+---
+
+### Ejercicio 2 — Taquilla: precio de entrada según edad
+**Historia de usuario**  
+Como responsable de taquilla, quiero asignar el precio de entrada según la edad del cliente, de forma que cada visitante pague la tarifa correspondiente y se controle el acceso adecuadamente.
+
+**Criterios de aceptación**
+- Solicita la edad y permite registrar varios clientes en ciclo.
 - Menores de 5 años ingresan gratis.
-- Entre 5 y 11 años pagan tarifa infantil.
-- Entre 12 y 59 años pagan tarifa general.
-- Mayores o iguales a 60 años pagan tarifa preferencial.
-- Si la edad es negativa, se informa valor inválido.
-- Se puede continuar registrando clientes hasta que se indique salida.
+- De 5 a 11 años: tarifa reducida.
+- De 12 a 59 años: tarifa estándar.
+- Mayores de 60 años: tarifa preferencial.
+- Si la edad ingresada es negativa, informa ingreso inválido.
+- Permite terminar el registro a decisión del usuario.
 
 ---
 
-## Ejercicio 3 — Progreso de entrenamiento
-
+### Ejercicio 3 — Seguimiento de entrenamiento semanal
 **Historia de usuario**  
-Como usuario de una app de hábitos, quiero recibir retroalimentación según cuántos días entrené en la semana, para medir mi disciplina.
+Como usuario interesado en mantener disciplina de entrenamiento, quiero ingresar los días entrenados en la semana y recibir retroalimentación positiva o motivacional, junto con una acumulación de puntos de energía.
 
 **Criterios de aceptación**
-- Si entrenó 4 o más días, recibe felicitación y gana 1 punto de energía.
-- Si entrenó 2 o 3 días, recibe mensaje de motivación intermedia.
-- Si entrenó 0 o 1 día, recibe mensaje para mejorar.
-- Siempre se muestra el total actual de puntos de energía.
+- Solicita la cantidad de días y muestra el mensaje adecuado:
+  - Si entrenó 4 o más días: felicitación y suma 1 punto de energía.
+  - Si entrenó 2 o 3 días: mensaje de ánimo.
+  - Si entrenó 0 o 1 día: mensaje de mejora.
+- Siempre muestra el total de puntos de energía actuales.
+- Permite una sola iteración por defecto.
 
 ---
 
-## Ejercicio 4 — Pedido de helado
-
+### Ejercicio 4 — Heladería: selección de sabor y topping
 **Historia de usuario**  
-Como vendedor de heladería, quiero registrar sabor y topping del helado para calcular correctamente el total del pedido.
+Como vendedor de helados, quiero registrar el sabor elegido y si desea topping para calcular el precio final del pedido.
 
 **Criterios de aceptación**
-- Se permite elegir entre sabores disponibles (chocolate o vainilla).
-- Se puede agregar topping con costo adicional fijo.
-- El precio final cambia según sabor y selección de topping.
-- Si el sabor no está disponible, se informa y se solicita nuevo intento.
+- Ofrece al menos dos sabores (chocolate, vainilla).
+- Permite agregar topping opcional con costo extra.
+- El precio varía según la combinación seleccionada.
+- Si elige un sabor no disponible, informa error y repite solicitud.
 
 ---
 
-## Ejercicio 5 — Venta de libros con beneficios
-
+### Ejercicio 5 — Librería: descuentos por perfil y cupón
 **Historia de usuario**  
-Como cajero de librería, quiero aplicar descuentos por perfil de estudiante y por cupón para cobrar el valor final correcto.
+Como cajero, quiero aplicar descuentos a estudiantes y permitir el uso de un cupón válido para ofrecer el mejor precio posible en la compra de libros.
 
 **Criterios de aceptación**
-- Si el comprador es estudiante, recibe descuento base.
-- Si además tiene cupón y el código es válido, recibe descuento adicional.
-- Si el cupón no es válido, solo aplica descuento base de estudiante.
-- Si no es estudiante, paga precio completo.
+- Pregunta si el comprador es estudiante para aplicar descuento base.
+- Si es estudiante y tiene cupón válido, suma un descuento adicional (requiere validación de código).
+- Si el cupón no es válido, sólo aplica el descuento de estudiante.
+- Si no es estudiante, cobra el precio completo del libro.
+- Siempre muestra el valor a pagar.
 
 ---
 
-## Ejercicio 6 — Cobro de parqueadero
-
+### Ejercicio 6 — Parqueadero: cobro regular y multa
 **Historia de usuario**  
-Como operador de parqueadero, quiero cobrar por horas de uso y aplicar multa al superar el tiempo permitido, para liquidar correctamente el servicio.
+Como operador de parqueadero, quiero calcular el pago por hora utilizada y sumar una multa si se pasan del límite permitido, para cobrar de forma correcta y transparente al cliente.
 
 **Criterios de aceptación**
-- Se calcula cobro por hora para estancias dentro del rango permitido.
-- Si las horas exceden el límite, se suma una multa fija.
-- Se muestra el total a pagar.
+- Solicita la cantidad de horas usadas.
+- Hasta 5 horas: cobra tarifa estándar por hora.
+- Más de 5 horas: cobra tarifa estándar multiplicada por horas más una multa fija.
+- Muestra siempre el monto total a pagar.
 
 ---
 
-## Ejercicio 7 — Facturación de almuerzos y bebidas
-
+### Ejercicio 7 — Restaurante: cuenta con bebidas e impuesto
 **Historia de usuario**  
-Como administrador de restaurante, quiero calcular la cuenta según cantidad de almuerzos, bebidas opcionales e impuesto, para entregar el total final al cliente.
+Como administrador de restaurante, quiero calcular la cuenta total considerando almuerzos, posibles bebidas adicionales e impuesto, para entregar el cobro correcto al cliente.
 
 **Criterios de aceptación**
-- Se calcula subtotal por cantidad de almuerzos.
-- Si el cliente agrega bebidas, se suma su costo al subtotal.
-- Al subtotal final se aplica un recargo/impuesto porcentual.
-- Se muestra total a pagar.
+- Solicita la cantidad de menús y si desea bebidas.
+- Si elige bebidas, solicita cantidad y las suma al subtotal.
+- Aplica un recargo del 8% (impuesto) al total.
+- Muestra el total final a pagar.
 
 ---
 
-## Ejercicio 8 — Evaluación ponderada
-
+### Ejercicio 8 — Evaluación: nota ponderada
 **Historia de usuario**  
-Como docente/reclutador, quiero obtener una nota final ponderada con dos pruebas, para clasificar el resultado del evaluado.
+Como docente/reclutador, quiero calcular la nota final ponderada a partir de una prueba técnica y una lógica, para clasificar a la persona en aprobado, revisión o reprobado.
 
 **Criterios de aceptación**
-- La prueba técnica pesa 70%.
-- La prueba lógica pesa 30%.
-- Con base en la nota final:
-  - Aprobado en rango superior.
-  - Revisión en rango intermedio.
-  - Reprobado en rango bajo.
-- Si el dato sale de rango esperado, se informa inconsistencia.
+- Solicita la nota de ambas pruebas.
+- Calcula nota final: técnica (70%) + lógica (30%).
+- Si la nota está en 3 a 5: aprobado.
+- Si la nota está en 2 a <3: proceso de revisión.
+- Si la nota es menor a 2: reprobado.
+- Si se ingresan datos fuera de rango esperado, informa datos errados.
 
 ---
 
-## Ejercicio 9 — Descuentos por volumen y envío
-
+### Ejercicio 9 — Tienda: descuentos y envío mínimo
 **Historia de usuario**  
-Como sistema de tienda, quiero aplicar descuentos por cantidad comprada y luego evaluar costo de envío, para calcular el pago total del cliente.
+Como sistema de venta, quiero aplicar descuentos por cantidad y evaluar si corresponde sumar costo fijo de envío, para garantizar una facturación adecuada y transparente.
 
 **Criterios de aceptación**
-- Si la cantidad alcanza umbral alto, se aplica descuento mayor.
-- Si la cantidad está en umbral medio, se aplica descuento menor.
-- Si no alcanza umbral, se cobra sin descuento.
-- Si el total queda por debajo del mínimo de despacho, se agrega costo fijo de envío.
-- Se muestra total final.
+- Solicita cantidad comprada.
+- 30 o más: aplica mayor descuento (15%).
+- 10 a 29: descuento intermedio (5%).
+- Menos de 10: sin descuento.
+- Si el total queda por debajo de cierto umbral, se suma costo fijo de envío.
+- Siempre comunica el monto final discriminando descuentos y recargos.
 
 ---
 
-## Ejercicio 10 — Validación de acceso
-
+### Ejercicio 10 — Acceso por edad y documento
 **Historia de usuario**  
-Como controlador de acceso, quiero permitir entrada solo a personas mayores de edad que presenten documento, para cumplir requisitos de seguridad.
+Como controlador de acceso, quiero permitir solamente la entrada a personas mayores de edad con documento válido, de modo que se cumpla el control de seguridad.
 
 **Criterios de aceptación**
-- Si la persona tiene 18 o más y presenta documento, puede ingresar.
-- Si es menor de edad, acceso denegado.
-- Si es mayor de edad pero no presenta documento, se solicita documento.
+- Solicita edad y documento.
+- Si la persona es mayor de edad y presenta documento, permite ingreso.
+- Si es menor de edad, niega acceso.
+- Si es mayor pero no presenta documento, solicita que lo presente.
+- Responde siempre con mensaje de acuerdo a cada situación.
 
 ---
-
-## Nota de reconstrucción
-
-Estas historias fueron **reconstruidas** a partir de las soluciones implementadas en los archivos `.py`, para reemplazar el planteamiento original extraviado.
